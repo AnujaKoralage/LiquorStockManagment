@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.DashboardController">
+   <children>
+      <Button fx:id="btn_supplierManagment" layoutX="31.0" layoutY="103.0" mnemonicParsing="false" onAction="#toSupplierManagment" prefHeight="87.0" prefWidth="159.0" text="Supplier Managment">
+         <font>
+            <Font name="Harrington" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="btn_buyerManagment" layoutX="31.0" layoutY="219.0" mnemonicParsing="false" onAction="#toBuyerManagment" prefHeight="87.0" prefWidth="159.0" text="Buyer Managment">
+         <font>
+            <Font name="Harrington" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="btn_SupplierOrderManagement" layoutX="221.0" layoutY="103.0" mnemonicParsing="false" onAction="#toSupplierOrderManagment" prefHeight="87.0" prefWidth="159.0" text="Supplier Order &#10;    Managment">
+         <font>
+            <Font name="Harrington" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="btn_buyerOrderManagment" layoutX="221.0" layoutY="219.0" mnemonicParsing="false" onAction="#toBuyerOrderManagment" prefHeight="87.0" prefWidth="159.0" text="Buyer Order&#10; Managment">
+         <font>
+            <Font name="Harrington" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="btn_viewAllSupplierOrders" layoutX="411.0" layoutY="103.0" mnemonicParsing="false" onAction="#toViewAllSupplierOrders" prefHeight="87.0" prefWidth="159.0" text="View All Supplier &#10;         Orders">
+         <font>
+            <Font name="Harrington" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="btn_viewAllBuyerOrders" layoutX="411.0" layoutY="219.0" mnemonicParsing="false" onAction="#toViewAllBuyerOrders" prefHeight="87.0" prefWidth="159.0" text="View All Buyder &#10;         Orders">
+         <font>
+            <Font name="Harrington" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="btn_checkOrders" layoutX="580.0" layoutY="157.0" mnemonicParsing="false" onAction="#toCheckStocks" prefHeight="87.0" prefWidth="122.0" text="Check Stocks">
+         <font>
+            <Font name="Harrington" size="15.0" />
+         </font>
+      </Button>
+      <Label layoutX="234.0" layoutY="25.0" prefHeight="64.0" prefWidth="283.0" text="Liquor Managment System">
+         <font>
+            <Font name="Felix Titling" size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

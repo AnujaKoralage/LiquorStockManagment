@@ -1,0 +1,5 @@
+ip=localhost
+port=3306
+database=liquorstockdb
+user=root
+password=

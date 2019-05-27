@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="subre" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="515a3fcc-2218-4a52-9742-17d6303d65d9">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="LiquorAdapter"/>
+	<property name="com.jaspersoft.studio.data.sql.tables">
+		<![CDATA[bGlxdW9yc3RvY2tkYi5idXllcl9ncm4gLDE3NiwxNSxhOTY4MzM3Ni04YzE4LTQ0OWQtODE2Yy1h
+N2U1YjUyN2QyOTE7bGlxdW9yc3RvY2tkYi5idXllcl9pdGVtX2RldGFpbHMgLDE1LDEwMyxhZTUw
+ZDU5NC1lN2NjLTQwMTctYWI4Yy00ZGQ5MTBhYTBkNmE7bGlxdW9yc3RvY2tkYi5pdGVtICwxNzYs
+MTc2LDhlNTg1NTc1LWM2MzAtNGFmNS1hZjA3LTA4YTc2YjE2YmYyZTs=
+]]>
+	</property>
+	<parameter name="grnID" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT liquorstockdb.item.name,
+	liquorstockdb.buyer_item_details.qty,
+	liquorstockdb.buyer_item_details.`itemID`,
+	liquorstockdb.buyer_grn.`buyerID`,
+	liquorstockdb.buyer_grn.date,
+	liquorstockdb.buyer_grn.`grnID`
+FROM liquorstockdb.buyer_item_details
+	INNER JOIN liquorstockdb.buyer_grn ON 
+	 liquorstockdb.buyer_item_details.`buyerGrnID` = liquorstockdb.buyer_grn.`grnID` 
+	INNER JOIN liquorstockdb.item ON 
+	 liquorstockdb.buyer_item_details.`itemID` = liquorstockdb.item.`itemID` 
+WHERE 
+	 liquorstockdb.buyer_grn.`grnID` = $P{grnID}]]>
+	</queryString>
+	<field name="name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="item"/>
+	</field>
+	<field name="qty" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="qty"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="buyer_item_details"/>
+	</field>
+	<field name="itemID" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="itemID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="buyer_item_details"/>
+	</field>
+	<field name="buyerID" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="buyerID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="buyer_grn"/>
+	</field>
+	<field name="date" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="date"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="buyer_grn"/>
+	</field>
+	<field name="grnID" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="grnID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="buyer_grn"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="111" height="30" uuid="a1d8a2b5-1787-432f-8a59-b7df779a962d">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="51b83768-a2a8-4d97-82fb-1cc6bf63b797"/>
+				</reportElement>
+				<text><![CDATA[name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="111" y="0" width="111" height="30" uuid="dd94b42b-1b07-440b-aada-bd3946e2aa0e">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7c74febf-814e-4a42-bab7-2ca48bf8c996"/>
+				</reportElement>
+				<text><![CDATA[qty]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="222" y="0" width="111" height="30" uuid="c5e06600-8fbb-47d4-9dd5-1d99e9347725">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ffc26cf9-fac5-4633-b399-cc074af2caf1"/>
+				</reportElement>
+				<text><![CDATA[itemID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="333" y="0" width="111" height="30" uuid="05b4d7db-d340-47e7-849f-54e4a3d69e90">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="bf778165-2fca-41fb-9bdd-63b397da456f"/>
+				</reportElement>
+				<text><![CDATA[buyerID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="444" y="0" width="111" height="30" uuid="d69cd0fd-25e6-4193-b140-b81453b9779f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="43ab17d7-e527-46b3-8e3c-4ff4cf504afe"/>
+				</reportElement>
+				<text><![CDATA[date]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="111" height="30" uuid="14d6925a-c272-4766-ab9a-a0e06b01f732">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="51b83768-a2a8-4d97-82fb-1cc6bf63b797"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="111" y="0" width="111" height="30" uuid="dee6b8c0-692a-4dda-b12d-32ec865ce359">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7c74febf-814e-4a42-bab7-2ca48bf8c996"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{qty}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="222" y="0" width="111" height="30" uuid="8d4d71f6-42db-4695-92cf-f53c67487087">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ffc26cf9-fac5-4633-b399-cc074af2caf1"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{itemID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="333" y="0" width="111" height="30" uuid="8df4bdfc-bb64-445e-b19f-45ec07cebccb">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="bf778165-2fca-41fb-9bdd-63b397da456f"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{buyerID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="444" y="0" width="111" height="30" uuid="6ec97cd1-9d7d-4027-901c-885717609155">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="43ab17d7-e527-46b3-8e3c-4ff4cf504afe"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{date}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="LiquorBUYGRN" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="946b3e6c-81f2-4b54-a173-766431339e65">
+	<property name="com.jaspersoft.studio.data.sql.tables">
+		<![CDATA[bGlxdW9yc3RvY2tkYi5idXllcl9pdGVtX2RldGFpbHMgLDE1OSwxNSwxMzlkMDkwZi0xZGEwLTQ0
+YTUtOGVjNy0wMmI1NDcwZTg3Y2U7bGlxdW9yc3RvY2tkYi5pdGVtIEFTICwxNjQsMTM2LDkxNTQ0
+NmZjLTg5ZDItNDAxNC05OTRhLTg4Njc1M2UwMzUwYztsaXF1b3JzdG9ja2RiLmJ1eWVyX2dybiAs
+MzIwLDE1LDg2MTJiYWY1LTI0YWYtNGZiZi1iNTIzLWEzYWFhNGY3MDhiNjtsaXF1b3JzdG9ja2Ri
+Lml0ZW1fcHJpY2UgLDE1LDE1LGZmN2NmOGI3LWYyODYtNGIyNi1hNDc2LThiOWNhMmYzZGE0Mzs=
+]]>
+	</property>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="LiquorAdapter"/>
+	<parameter name="grnID" class="java.lang.String"/>
+	<parameter name="subReport" class="net.sf.jasperreports.engine.JasperReport"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT liquorstockdb.buyer_grn.`grnID`,
+	liquorstockdb.buyer_grn.`buyerID`,
+	liquorstockdb.buyer_grn.date,
+	liquorstockdb.buyer_grn.`grnID`,
+	liquorstockdb.buyer_grn.`buyerID`,
+	liquorstockdb.buyer_grn.date,
+	liquorstockdb.buyer_item_details.qty,
+	liquorstockdb.buyer_item_details.`itemID`,
+	liquorstockdb.item_price.`itemID`,
+	liquorstockdb.item_price.`dellingPrice`,
+	liquorstockdb.item.name
+FROM liquorstockdb.buyer_item_details
+	INNER JOIN liquorstockdb.buyer_grn ON 
+	 liquorstockdb.buyer_item_details.`buyerGrnID` = liquorstockdb.buyer_grn.`grnID` 
+	INNER JOIN liquorstockdb.item_price ON 
+	 liquorstockdb.item_price.`itemID` = liquorstockdb.buyer_item_details.`buyerGrnID` 
+	INNER JOIN liquorstockdb.item ON 
+	 liquorstockdb.item_price.`itemID` = liquorstockdb.item.`itemID` 
+	 AND liquorstockdb.buyer_item_details.`itemID` = liquorstockdb.item.`itemID` 
+WHERE 
+	 liquorstockdb.buyer_grn.`grnID` = $P{grnID}]]>
+	</queryString>
+	<field name="grnID" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="grnID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="buyer_grn"/>
+	</field>
+	<field name="buyerID" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="buyerID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="buyer_grn"/>
+	</field>
+	<field name="date" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="date"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="buyer_grn"/>
+	</field>
+	<field name="qty" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="qty"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="buyer_item_details"/>
+	</field>
+	<field name="itemID" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="itemID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="buyer_item_details"/>
+	</field>
+	<field name="dellingPrice" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="dellingPrice"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="item_price"/>
+	</field>
+	<field name="name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="item"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="50" y="10" width="471" height="51" uuid="03dc96de-20af-4a59-bb77-8ecd906bdf5f"/>
+				<textElement textAlignment="Center">
+					<font fontName="Malgun Gothic" size="26"/>
+				</textElement>
+				<text><![CDATA[Liquor Buyer GRN]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="148" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="81" height="30" uuid="caba34c3-8bd9-4250-9a59-f9c2294d3000">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4c545b6b-9551-4662-bc9f-d91248dbb524"/>
+				</reportElement>
+				<text><![CDATA[grnID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="50" width="79" height="30" uuid="a7989156-fa39-45e0-9f5c-d1b44d664ec5">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b1ab0c69-1c1c-41c0-a53f-d925dcdae685"/>
+				</reportElement>
+				<text><![CDATA[buyerID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="280" y="50" width="79" height="30" uuid="e8173929-7be8-4571-a555-6949cc27c4e7">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3a4eadc2-9a78-4e11-8e60-a6d0589bad2e"/>
+				</reportElement>
+				<text><![CDATA[date]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="120" y="0" width="81" height="30" uuid="5c7f896e-401c-4674-a60e-73d9f1751976">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4c545b6b-9551-4662-bc9f-d91248dbb524"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{grnID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="110" y="50" width="79" height="30" uuid="bc43e8fe-c6b6-4762-9ac5-1437b168447d">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b1ab0c69-1c1c-41c0-a53f-d925dcdae685"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{buyerID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="410" y="50" width="79" height="30" uuid="ba686567-082c-4933-8f27-ba77c5e0ded2">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3a4eadc2-9a78-4e11-8e60-a6d0589bad2e"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{date}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="248" splitType="Stretch">
+			<subreport>
+				<reportElement x="0" y="13" width="561" height="221" uuid="853ecd84-0794-4c22-b61a-0efcaf7e4d8c"/>
+				<subreportParameter name="grnID">
+					<subreportParameterExpression><![CDATA[$P{grnID}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{subReport}]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="502.0" prefWidth="604.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.SupplierManagmentController">
+   <children>
+      <Label layoutX="189.0" layoutY="34.0" prefHeight="38.0" prefWidth="222.0" text="Supplier Managment">
+         <font>
+            <Font name="Felix Titling" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="64.0" layoutY="97.0" prefHeight="21.0" prefWidth="112.0" text="Supplier ID" />
+      <Label layoutX="64.0" layoutY="133.0" prefHeight="21.0" prefWidth="112.0" text="Supplier Name" />
+      <Label layoutX="64.0" layoutY="168.0" text="Supplier Address" />
+      <Label layoutX="32.0" layoutY="225.0" prefHeight="21.0" prefWidth="83.0" text="Item Name" />
+      <TextField fx:id="txt_supplierAddress" layoutX="203.0" layoutY="163.0" prefHeight="31.0" prefWidth="309.0" />
+      <TextField fx:id="txt_supplierName" layoutX="203.0" layoutY="128.0" prefHeight="31.0" prefWidth="309.0" />
+      <TextField fx:id="txt_supplierID" layoutX="203.0" layoutY="92.0" prefHeight="31.0" prefWidth="309.0" />
+      <TableView fx:id="tbl_supplierItem" layoutX="40.0" layoutY="288.0" prefHeight="163.0" prefWidth="521.0">
+        <columns>
+          <TableColumn prefWidth="133.0" text="Item ID" />
+          <TableColumn prefWidth="277.0" text="Item Name" />
+        </columns>
+      </TableView>
+      <Line endX="100.0" layoutX="101.0" layoutY="214.0" startX="-100.0" />
+      <Line endX="100.0" layoutX="301.0" layoutY="214.0" startX="-100.0" />
+      <Line endX="100.0" layoutX="503.0" layoutY="214.0" startX="-100.0" />
+      <Label layoutX="323.0" layoutY="225.0" text="Item Code" />
+      <Button fx:id="btn_addItem" layoutX="371.0" layoutY="257.0" mnemonicParsing="false" onAction="#addItemToSupplier" prefHeight="31.0" prefWidth="103.0" text="Add Item" />
+      <Button fx:id="btn_saveSupplier" layoutX="258.0" layoutY="457.0" mnemonicParsing="false" onAction="#saveSupplier" text="Save Supplier" />
+      <Button fx:id="btn_updateSupplier" layoutX="249.0" layoutY="457.0" mnemonicParsing="false" onAction="#updateSupplier" text="Update Supplier" />
+      <Button fx:id="btn_viewAllSuppliers" layoutX="452.0" layoutY="14.0" mnemonicParsing="false" onAction="#toViewAllSuppliers" text="View All Suppliers" />
+      <Button fx:id="btn_back" layoutX="8.0" layoutY="14.0" mnemonicParsing="false" onAction="#goDashboard" text="Back" />
+      <TextField fx:id="txt_itemName" layoutX="120.0" layoutY="220.0" />
+      <TextField fx:id="txt_itemCode" layoutX="402.0" layoutY="220.0" />
+      <Button fx:id="btn_updateItem" layoutX="370.0" layoutY="257.0" mnemonicParsing="false" onAction="#updateItem" text="Update Item" />
+   </children>
+</AnchorPane>
