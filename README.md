@@ -2,28 +2,28 @@
 
 #### Liquor stock managment system
 
-##Getting Started
+## Getting Started
 
 Clone the project via Intellil IDEA and import mysql.db file.
 
-##Prerequisites
+## Prerequisites
 
-+Intellj idea
-+Jasper Studio
-+JavaSE(JavaFX)
-+SceneBulider
++ Intellj idea
++ Jasper Studio
++ JavaSE(JavaFX)
++ SceneBulider
 
 ## Built With
 
 +JavaFX
 +Java
 
-##Technological Stack
+## Technological Stack
 
 -Layered Architecture
 -Singleton, Factory, DAO, DTO, Strategy design patterns
 -MySql
 
-##Authors
+## Authors
 
 -[AnujaKoralage](https://github.com/AnujaKoralage)
