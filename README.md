@@ -15,15 +15,15 @@ Clone the project via Intellil IDEA and import mysql.db file.
 
 ## Built With
 
-+JavaFX
-+Java
++ JavaFX
++ Java
 
 ## Technological Stack
 
--Layered Architecture
--Singleton, Factory, DAO, DTO, Strategy design patterns
--MySql
+- Layered Architecture
+- Singleton, Factory, DAO, DTO, Strategy design patterns
+- MySql
 
 ## Authors
 
--[AnujaKoralage](https://github.com/AnujaKoralage)
+- [AnujaKoralage](https://github.com/AnujaKoralage)
