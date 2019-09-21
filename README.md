@@ -10,7 +10,7 @@ git init
 ```
 2. Clone the repo
 ```sh
-git clone https://github.com/AnujaKoralage/WholeSalePosWithJPA.git
+git clone https://github.com/AnujaKoralage/LiquorStockManagment.git
 ```
 3. Import project via Intellij Idea
 
